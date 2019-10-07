@@ -17,7 +17,7 @@ public class Ejercicio16 {
     System.out.println("");
     
     if (respuesta.equalsIgnoreCase("Verdadero")) {
-      nota++; nota++; nota++;
+      nota+=3;
     } else {
       nota = nota;
     }
@@ -28,7 +28,7 @@ public class Ejercicio16 {
     System.out.println("");
     
     if (respuesta.equalsIgnoreCase("Verdadero")) {
-      nota++; nota++; nota++;
+      nota+=3;
     } else {
       nota = nota;
     }
@@ -39,7 +39,7 @@ public class Ejercicio16 {
     System.out.println("");
     
     if (respuesta.equalsIgnoreCase("Verdadero")) {
-      nota++; nota++; nota++;
+      nota+=3;
     } else {
       nota = nota;
     }
@@ -50,7 +50,7 @@ public class Ejercicio16 {
     System.out.println("");
     
     if (respuesta.equalsIgnoreCase("Verdadero")) {
-      nota++; nota++; nota++;
+      nota+=3;
     } else {
       nota = nota;
     }
@@ -61,7 +61,7 @@ public class Ejercicio16 {
     System.out.println("");
     
     if (respuesta.equalsIgnoreCase("Verdadero")) {
-      nota++; nota++; nota++;
+      nota+=3;
     } else {
       nota = nota;
     }
@@ -72,7 +72,7 @@ public class Ejercicio16 {
     System.out.println("");
     
     if (respuesta.equalsIgnoreCase("Verdadero")) {
-      nota++; nota++; nota++;
+      nota+=3;
     } else {
       nota = nota;
     }
@@ -83,7 +83,7 @@ public class Ejercicio16 {
     System.out.println("");
     
     if (respuesta.equalsIgnoreCase("Verdadero")) {
-      nota++; nota++; nota++;
+      nota+=3;
     } else {
       nota = nota;
     }
@@ -94,7 +94,7 @@ public class Ejercicio16 {
     System.out.println("");
     
     if (respuesta.equalsIgnoreCase("Verdadero")) {
-      nota++; nota++; nota++;
+      nota+=3;
     } else {
       nota = nota;
     }
@@ -105,7 +105,7 @@ public class Ejercicio16 {
     System.out.println("");
     
     if (respuesta.equalsIgnoreCase("Verdadero")) {
-      nota++; nota++; nota++;
+      nota+=3;
     } else {
       nota = nota;
     }
@@ -116,7 +116,7 @@ public class Ejercicio16 {
     System.out.println("");
     
     if (respuesta.equalsIgnoreCase("Verdadero")) {
-      nota++; nota++; nota++;
+      nota+=3;
     } else {
       nota = nota;
     }
