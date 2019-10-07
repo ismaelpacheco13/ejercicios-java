@@ -15,8 +15,8 @@ public class Ejercicio09 {
 		double ecuacionPositiva = ((-b + Math.sqrt(raizEcuacion)) / 2*a);
 		double ecuacionNegativa = ((-b - Math.sqrt(raizEcuacion)) / 2*a);
 		
-		if (a == 0) {
-			System.out.print("La ecuación no tiene solución");
+		if ((a == 0) && (b != 0) && (c !=0)) {
+			System.out.print("La solución es: " + (String.format("%.2f", -b/c)));
 		} else if (raizEcuacion < 0) {
 			System.out.print("La ecuación no tiene solución real");
 		} else {
