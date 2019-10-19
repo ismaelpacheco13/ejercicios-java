@@ -12,7 +12,7 @@ public class Ejercicio35 {
     System.out.print("Introduce la altura: ");
     int alturaIntroducida = Integer.parseInt(read.nextLine());
     
-    while ((alturaIntroducida < 3) | ((alturaIntroducida % 2) == 0)) {
+    while ((alturaIntroducida < 3) || ((alturaIntroducida % 2) == 0)) {
       System.out.println("ERROR: La altura introducida debe ser un número impar mayor o igual a 3");
       System.out.print("Introduce la altura: ");
       alturaIntroducida = Integer.parseInt(read.nextLine());
