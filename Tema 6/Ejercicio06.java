@@ -12,7 +12,7 @@ public class Ejercicio06 {
     System.out.println("Cada intento fallido el programa dirá si el número es mayor o menor al introducido");
     System.out.println("-----------------------------------------------------------------------------------");
     
-    int numeroAleatorio = (int)(Math.random() * 100);
+    int numeroAleatorio = (int)(Math.random() * 101);
     int numeroIntroducido = 0;
     int i = 5;
     
@@ -33,6 +33,10 @@ public class Ejercicio06 {
         System.out.println("Te quedan " + i + " oportunidades.");
         System.out.println("");
       }
+    }
+    if (numeroIntroducido != numeroAleatorio) {
+      System.out.println("Te quedaste sin oportunidades..");
+      System.out.println("El número aleatorio era el " + numeroAleatorio);
     }
   }
   
