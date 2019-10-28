@@ -14,12 +14,10 @@ public class Ejercicio12 {
       for (int j = 1; j <= 80; j++) {
         numeroAleatorio = (int)((Math.random() * 95) + 32);
         caracterAleatorio = (char)numeroAleatorio;
-        System.out.print(caracterAleatorio);
-        
+        System.out.print(caracterAleatorio);        
       }
       Thread.sleep(40);
       System.out.println("");
     }
   }
-  
 }
