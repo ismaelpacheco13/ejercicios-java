@@ -11,14 +11,15 @@ public class Ejercicio12 {
     
     
     
-    for (int i = 1; i <= 100; i++) {
+    for (int i = 1; i <= 500; i++) {
       System.out.print("\033[32m");
-      for (int j = 1; j <= 100; j++) {
+      for (int j = 1; j <= 80; j++) {
         numeroAleatorio = (int)((Math.random() * 95) + 32);
         caracterAleatorio = (char)numeroAleatorio;
         System.out.print(caracterAleatorio);
-        Thread.sleep(6);
+        
       }
+      Thread.sleep(40);
       System.out.println("");
     }
   }
