@@ -123,4 +123,138 @@ public class Ejercicio01hasta14 {
     }
     return sPrimo;
   }
+  
+  // Función que dada una base y el exponente da la potencia
+  public static double potencia(int n, int p) { // Dado un número entero
+    return Math.pow(n,p);
+  }
+  
+  // Función que cuenta el número de dígitos que hay en un número
+  public static int digitos(long n) {
+    int digitos = 0;
+    
+    if (n < 0) {
+      n = -n;
+    }
+    
+    if (n == 0) {
+      digitos = 1;
+    } else {
+      while (n > 0) {
+        n /= 10;
+        digitos++;
+      }
+    }
+    return digitos;
+  }
+  
+  public static int digitos(int n) {
+    int digitos = 0;
+    
+    if (n < 0) {
+      n = -n;
+    }
+    
+    if (n == 0) {
+      digitos = 1;
+    } else {
+      while (n > 0) {
+        n /= 10;
+        digitos++;
+      }
+    }
+    return digitos;
+  }
+  
+  // Función que devuelve el dígito que está en la posición n de un número entero
+  public static int digitoN(long n, int p) {
+    n = voltea(n);
+    
+    while (p-- > 0) {
+      n /= 10;
+    }
+    return (int)n % 10;
+  }
+  
+  public static int digitoN(int n, int p) {
+    return digitoN((long)n, p);
+  }
+  
+  // Función que da la posición de la primera ocurrencia de un dígito dentro de un número entero
+  public static int posicionDeDigito(long n, int p) {
+    int i;
+
+    for (i = 0; (i < digitos(n)) && (digitoN(n, i) != p); i++) {};
+
+    if (i == digitos(n)) {
+      return -1;
+    } else {
+      return i;
+    }
+  }
+  
+  public static int posicionDeDigito(int n, int p) {
+    return posicionDeDigito((long)n, p);
+  }
+  
+  // Función que quita a un número n dígitos por detras (por la derecha)
+  public static long quitaPorDetras(long x, int n) {
+    return x / (long)potencia(10, n);
+  }
+  
+  public static int quitaPorDetras(int x, int n) {
+    return (int)quitaPorDetras((long) x, n);
+  }
+  
+  // Función que quita a un número n dígitos por delante (por la izquierda)
+  public static long quitaPorDelante(long x, int n) {
+    x = pegaPorDetras(x, 1); // "cierra" el número por si acaso termina en 0
+    x = voltea(quitaPorDetras(voltea(x), n));
+    x = quitaPorDetras(x, 1);
+    return x;
+  }
+  
+  public static int quitaPorDelante(int x, int n) {
+    return (int)quitaPorDelante((long)x, n);
+  }
+  
+  // Función que añade un dígito a un número por detrás
+  public static long pegaPorDetras(long x, int d) {
+    return juntaNumeros(x, d);
+  }
+  
+  public static int pegaPorDetras(int x, int d) {
+    return (int)pegaPorDetras((long)x, d);
+  }
+  
+  // Función que añade un dígito a un número por delante
+  public static long pegaPorDelante(long x, int d) {
+    return juntaNumeros(d, x);
+  }
+  
+  public static int pegaPorDelante(int x, int d) {
+    return (int)pegaPorDelante((long)x, d);
+  }
+  
+  // Función que toma como parámetros las posiciones inicial y final dentro de un número y devuelve el trozo correspondiente
+  public static long trozoDeNumero(long x, int inicio, int fin) {
+    int longitud = digitos(x);
+    x = quitaPorDelante(x, inicio);
+    x = quitaPorDetras(x, longitud - fin - 1);
+    return x;
+  }
+  
+  public static int trozoDeNumero(int x, int inicio, int fin) {
+    return (int)trozoDeNumero((long)x, inicio, fin);
+  }
+  
+  // Función que pega dos números para forma uno
+  public static long juntaNumeros(long x, long y) {
+    return (long)(x * potencia(10, digitos(y))) + y;
+  }
+  
+  public static int juntaNumeros(int x, int y) {
+    return (int)(juntaNumeros((long)x, (long)y));
+  }
 }
+
