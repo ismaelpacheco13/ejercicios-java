@@ -19,4 +19,19 @@ public class funcionesVarias {
     return resultado;
   }
   
+  // Función que convierte números al sistema morse
+  public static String convierteEnMorse(int n) {
+    String[] morse = {
+	  "_ _ _ _ _", ". _ _ _ _", ". . _ _ _", ". . . _ _", ". . . . _",
+      ". . . . .", "_ . . . .", "_ _ . . .", "_ _ _ . .", "_ _ _ _ ."
+    };
+    
+    String resultado = "";
+    
+    for(int i = 0; i < funcionesMatematicas.digitos(n); i++) {
+      resultado += morse[funcionesMatematicas.digitoN(n, i)];
+    }
+    
+    return resultado;
+  }
 }
