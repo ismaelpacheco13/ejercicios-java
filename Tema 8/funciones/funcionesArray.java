@@ -124,4 +124,44 @@ public class funcionesArray {
       
     return a;
   }
+  
+  // Función que filtra primos de un array de enteros
+  public static int[] filtraPrimos(int x[]) {
+    int[] primos = new int[x.length];
+    
+    int cuentaPrimos = 0;
+    for (int numero : x) {
+      if (funcionesMatematicas.esPrimo(numero)) {
+        primos[cuentaPrimos++] = numero;
+      }
+    }
+    
+    int[] resultado = new int[cuentaPrimos];
+    
+    for (int i = 0; i < cuentaPrimos; i++) {
+      resultado[i] = primos[i];
+    }
+   
+    return resultado;
+  }
+  
+  // Función que filtra los números capicua de un array de enteros
+  public static int[] filtraCapicuas(int x[]) {
+    int[] capicuas = new int[x.length];
+    
+    int cuentaCapicuas = 0;
+    for (int numero : x) {
+      if (funcionesMatematicas.esCapicua(numero)) {
+        capicuas[cuentaCapicuas++] = numero;
+      }
+    }
+    
+    int[] resultado = new int[cuentaCapicuas];
+    
+    for (int i = 0; i < cuentaCapicuas; i++) {
+      resultado[i] = capicuas[i];
+    }
+   
+    return resultado;
+  }
 }
