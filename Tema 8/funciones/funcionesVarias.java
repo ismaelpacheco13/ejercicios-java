@@ -34,4 +34,22 @@ public class funcionesVarias {
     
     return resultado;
   }
+  
+  // Función que convierte un número en palabras
+  public static String convierteEnPalabras(int n) {
+    String[] digitos = {
+      "cero", "uno", "dos", "tres", "cuatro",
+      "cinco", "seis", "siete", "ocho", "nueve"
+    };
+
+    String resultado = "";
+
+    int i;
+    for (i = 0; i < funcionesMatematicas.digitos(n) - 1; i++) {
+      resultado += digitos[funcionesMatematicas.digitoN(n, i)] + ", ";
+    }
+    resultado += digitos[funcionesMatematicas.digitoN(n, i)];
+
+    return resultado;
+  }
 }
