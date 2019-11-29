@@ -52,4 +52,30 @@ public class funcionesVarias {
 
     return resultado;
   }
+  
+  /* Función que devuelve el número de veces que aparece un dígito
+  dentro de un número (primera función) o bien el número de veces que aparece
+  un dígito en una serie de números contenidos en un array (segunda función). */
+  public static int ocurrencias(int digito, int n) {
+    int repetido = 0;
+    
+    while (n > 0) {
+      if ((n % 10) == digito) {
+        repetido++;
+      }
+      n = n/10;
+    }
+
+    return repetido;
+  }
+  
+  public static int ocurrencias(int digito, int[] a) {
+    int repetido = 0;
+    
+    for (int n : a) {
+      repetido += ocurrencias(digito, n);
+    }
+    
+    return repetido;
+  }
 }
