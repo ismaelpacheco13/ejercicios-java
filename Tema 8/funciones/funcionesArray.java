@@ -264,4 +264,87 @@ public class funcionesArray {
       return n[posicion / columnas][posicion % columnas];
     }
   }
+  
+  /* Realiza una función que tome como parámetro un array de cadenas de carac-
+  teres y que devuelva otro array con los mismos valores habiendo eliminado
+  las posibles repeticiones. Se distinguen mayúsculas de minúsculas, por tanto
+  “hola” es distinto de “Hola”. */
+  public static String[] sinRepetir(String[] s) {
+    String[] vacio = {};
+    if (s.length == 0) {
+      return vacio;
+    }
+    
+    String[] resultado = new String[s.length];
+    
+    resultado[0] = s[0];
+    int j = 1;
+    for (int i = 1; i < s.length; i++) {
+      if (!contiene(resultado, s[i])) {
+        resultado[j++] = s[i];
+      }
+    }
+    
+    return compacta(resultado);
+  }
+  
+  public static boolean contiene(String[] lista, String cadena) {
+     
+    for (String elemento : lista) {
+      if ((elemento != null) && (elemento.equals(cadena))) {
+        return true;
+      }
+    }
+    return false;
+  }
+  
+  /**
+   * Quita los elementos nulos consecutivos por el final.
+   * 
+   * @param s array que puede tener nulos al final
+   * @return array sin nulos
+   */
+  public static String[] compacta(String[] s) {
+    
+    int i = s.length - 1;
+    
+    while (s[i] == null) {
+      i--;
+    }
+    String[] resultado = new String[i + 1];
+    System.arraycopy(s, 0, resultado, 0, i + 1);
+    
+    return resultado;
+  }
+  
+  // Función que saca la "corteza" del array (números del marco del array)
+  public static int[] corteza(int[][] n) {
+    int filas = n.length;
+    int columnas = n[0].length;
+    
+    int[] resultado = new int[2 * filas + 2 * columnas - 4];
+    
+    int j = 0;
+    
+    // Fila superior
+    for (int i = 0; i < columnas - 1; i++) {
+      resultado[j++] = n[0][i];
+    }
+    
+    // Columna derecha
+    for (int i = 0; i < filas - 1; i++) {
+      resultado[j++] = n[i][columnas - 1];
+    }
+    
+    // Fila inferior
+    for (int i = columnas - 1; i > 0; i--) {
+      resultado[j++] = n[filas - 1][i];
+    }
+    
+    // Columna izquierda
+    for (int i = filas - 1; i > 0; i--) {
+      resultado[j++] = n[i][0];
+    }
+    return resultado;
+  }
 }
