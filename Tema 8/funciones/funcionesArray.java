@@ -248,4 +248,20 @@ public class funcionesArray {
   public static int aleatorioDeArray(int[] a) {
     return a[(int)(Math.random() * a.length)];
   }
+  
+  /*Implementa una función con nombre nEsimo que busque el número que hay
+  dentro de un array bidimensional en la posición n-ésima contando de izquierda
+  a derecha y de arriba abajo, como si se estuviera leyendo. El primer elemento
+  es el 0. Si la posición donde se busca no existe en el array, la función debe
+  devolver -1. */
+  public static int nEsimo(int[][] n, int posicion) {
+	int filas = n.length;
+    int columnas = n[0].length;
+    
+    if ((posicion < 0) || (posicion > filas * columnas - 1)) {
+      return -1;
+    } else {
+      return n[posicion / columnas][posicion % columnas];
+    }
+  }
 }
