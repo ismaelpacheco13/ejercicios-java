@@ -198,4 +198,13 @@ public class funcionesArray {
   public static boolean contieneEl7(long n) {
     return funcionesMatematicas.posicionDeDigito(n, 7) != -1;
   }
+  
+  // Función que convierte un array en string
+  public static String convierteArrayEnString(int[] a) {
+    String resultado = "";
+    for (int digito : a) {
+      resultado += digito;
+    }
+    return resultado;
+  }
 }
