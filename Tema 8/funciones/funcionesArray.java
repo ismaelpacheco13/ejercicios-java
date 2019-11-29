@@ -207,4 +207,19 @@ public class funcionesArray {
     }
     return resultado;
   }
+  
+  // Función que concatena dos arrays
+  public static int[] concatena(int[] a, int[] b) {
+    int[] resultado = new int[a.length + b.length];
+
+    for (int i = 0; i < a.length; i++) {
+      resultado[i] = a[i];
+    }
+
+    for (int i = 0; i < b.length; i++) {
+      resultado[i + a.length] = b[i];
+    }
+
+    return resultado;
+  }
 }
