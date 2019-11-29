@@ -222,4 +222,25 @@ public class funcionesArray {
 
     return resultado;
   }
+  
+  // Función que mezcla dos arrays (número de uno, despues número del otro y así sucesivamente)
+  public static int[] mezcla(int[] a, int[] b) {
+    int[] resultado = new int[a.length + b.length];
+
+    int colocadosDeA = 0;
+    int colocadosDeB = 0;
+    int i = 0;
+    
+    do {
+      if (colocadosDeA < a.length) {
+        resultado[i++] = a[colocadosDeA++];
+      }
+      
+      if (colocadosDeB < b.length) {
+        resultado[i++] = b[colocadosDeB++];
+      }
+    } while (i < a.length + b.length);
+
+    return resultado;
+  }
 }
