@@ -243,4 +243,9 @@ public class funcionesArray {
 
     return resultado;
   }
+  
+  // Función que devuelve un número aleatorio del array
+  public static int aleatorioDeArray(int[] a) {
+    return a[(int)(Math.random() * a.length)];
+  }
 }
