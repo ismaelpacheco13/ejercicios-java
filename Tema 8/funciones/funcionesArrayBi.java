@@ -50,6 +50,46 @@ public class funcionesArrayBi {
       
     return x;
   }
+  
+  /**
+   * Crea un array bidimensional de números enteros y lo rellena con valores
+   * aleatorios (sin repeticiones) dentro de un rango.
+   * <p>
+   * Por ejemplo, <code>generaArrayBiInt(8, 7, 10, 30)</code> devolvería un
+   * array de 8 filas por 7 columnas relleno con números generados al azar
+   * comprendidos entre 10 y 30.
+   * 
+   * @param filas    número de filas que tendrá el array
+   * @param columnas número de columnas que tendrá el array
+   * @param minimo   límite inferior del intervalo de números aleatorios
+   * @param máximo   límite superior del intervalo de números aleatorios
+   * @return         array bidimensional de números enteros rellena con valores
+   *                 aleatorios dentro del rango definido por los valores
+   *                 <code>minimo</code> y <code>maximo</code>
+   */
+  public static int[][] generaArrayBiIntSinRepeticiones(int filas, int columnas, int minimo, int maximo) {
+    int[][] x = new int[filas][columnas];
+    boolean repetido;
+    int p;
+
+    for(int i = 0; i < filas; i++) {
+      for(int j = 0; j < columnas; j++) {
+        x[i][j] = (int)(Math.random()*(maximo - minimo) + minimo + 1);
+        do {
+          x[i][j] = (int)(Math.random()*(maximo - minimo) + minimo + 1);
+          
+          repetido = false;
+          for (p = 0; p < columnas * i + j; p++) {
+            if (x[i][j] == x[i / 10][i % 10]) {
+              repetido = true;
+            }
+          }
+        } while (repetido);
+      }
+    }
+      
+    return x;
+  }
 
   /**
    * Devuelve el valor máximo de un array bidimensional que se pasa como
@@ -70,6 +110,27 @@ public class funcionesArrayBi {
     }  
 
     return maximo;
+  }
+  
+  /**
+   * Devuelve el valor mínimo de un array bidimensional que se pasa como
+   * parámetro.
+   * 
+   * @param x array bidimiensional de números enteros
+   * @return  número máximo encontrado en el array
+   */
+  public static int minimoArrayBiInt(int x[][]) {
+    int minimo = Integer.MAX_VALUE;
+    
+    for (int f = 0; f < x.length; f++) {
+      for (int c = 0; c < x[0].length; c++) {
+        if (x[f][c] < minimo) {
+          minimo = x[f][c];
+        }
+      }
+    }  
+
+    return minimo;
   }
 
 
