@@ -1,6 +1,8 @@
 package Ejercicio13;
 
-public class Articulo {
+import java.util.Objects;
+
+public class Articulo implements Comparable<Articulo> {
   private String codigo = "LIBRE";
   private String descripcion;
   private double precioDeCompra;
@@ -68,6 +70,36 @@ public class Articulo {
     cadena += "\nStock: " + this.stock + " unidades";
     cadena += "\n------------------------------------------";
     return cadena;
+  }
+
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 73 * hash + Objects.hashCode(this.codigo);
+    return hash;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final Articulo other = (Articulo) obj;
+    if (!Objects.equals(this.codigo, other.codigo)) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
+  public int compareTo(Articulo t) {
+    return (this.codigo).compareTo(t.codigo);
   }
 }
 
