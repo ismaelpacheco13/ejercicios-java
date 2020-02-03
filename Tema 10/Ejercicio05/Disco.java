@@ -1,7 +1,9 @@
 
 package Ejercicio05;
 
-public class Disco {
+import java.util.Objects;
+
+public class Disco implements Comparable<Disco> {
   // Atributos
   private String codigo;
   private String autor;
@@ -74,6 +76,36 @@ public class Disco {
         cadena += "\n------------------------------------------";
         
      return cadena;
+  }
+
+  @Override
+  public int hashCode() {
+    int hash = 7;
+    hash = 47 * hash + Objects.hashCode(this.codigo);
+    return hash;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    final Disco other = (Disco) obj;
+    if (!Objects.equals(this.codigo, other.codigo)) {
+      return false;
+    }
+    return true;
+  }
+
+  @Override
+  public int compareTo(Disco t) {
+    return (this.codigo).compareTo(t.codigo);
   }
   
   

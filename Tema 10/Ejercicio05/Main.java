@@ -22,7 +22,7 @@ public class Main {
     // Lista de discos
     ArrayList<Disco> album = new ArrayList<>();
     
-    album.add(new Disco("EU30", "Pepe", "Botella", "Pop", 3));
+    album.add(new Disco("EU30", "Delaossa", "La Placita", "Rap", 3));
     album.add(new Disco("EU31", "Kidd Keo", "Trap Life", "Trap", 3));
     do {
       System.out.println("\n\nCOLECCIÓN DE DISCOS");
@@ -71,7 +71,6 @@ public class Main {
           System.out.print("Introduzca el código del disco que quiere modificar: ");
           codigoIntroducido = read.nextLine();
           j = album.indexOf(new Disco(codigoIntroducido));
-          System.out.println(j); // No se porque j da -1...
 
           System.out.println("Introduzca los nuevos datos del disco o pulse INTRO para dejarlos igual");
 
@@ -117,9 +116,7 @@ public class Main {
           System.out.println("======");
 
           System.out.print("Introduzca el código del disco que desea borrar: ");
-          j = album.indexOf(new Disco(read.nextLine(), "", "", "", 0));
-          
-          album.remove(j);
+          album.remove(new Disco(read.nextLine()));
           System.out.println("Album borrado.");
           break;
 
